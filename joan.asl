@@ -14,6 +14,7 @@ state("JOAN", "Steam")
 	int finaltimer :	0x657EC5;
 	int missiontimer :	0x659181;
 	int gametimer :		0x6596D0;
+	ushort combo : 		0x65BA62;
 	
 }
 
@@ -26,6 +27,7 @@ state("JOAN", "Akella")
 	int finaltimer : 	0x472305;
 	int missiontimer :	0x4735C1;
 	int gametimer : 	0x473B10;
+	ushort combo : 		0x475EA2;
 	
 }
 
@@ -39,6 +41,7 @@ state("JOAN", "Retail")				// US 1.0
 	int finaltimer : 	0x0046EEBD;
 	int missiontimer :	0x00470179;
 	int gametimer : 	0x004706C8;
+	ushort combo : 		0x00472A5A;
 	
 }
 
@@ -106,7 +109,7 @@ split
 	if (old.missiontimer == 0 && current.missiontimer < 2500 && current.missiontimer > 0)
 		return true;
 	// Split on game ending
-	if (current.finaltimer > 0)
+	if (current.finaltimer > 2500 && old.finaltimer < 2500)
 		return true;
 }
 
