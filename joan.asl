@@ -50,6 +50,8 @@ startup
 	// to lower CPU usage and avoid race condition
 	//refreshRate = 5;
 	//vars.oldmission = "S0L1";
+
+	settings.Add("IL_enable", false, "IL speedrun");
 	
 	Func<ProcessModuleWow64Safe, string> CalcModuleHash = (module) => {
 		print("Calcuating hash of "+module.FileName);
@@ -99,7 +101,7 @@ update
 
 start
 {
-	if (current.gametimer != 0 && old.gametimer == 0)
+	if (current.missiontimer != 0 && old.missiontimer == 0)
 		return true;
 }
 
@@ -126,6 +128,8 @@ isLoading
 gameTime 
 {
 	// update IGT on starting every mission and when game ends
-	if (current.missiontimer < 2500 || current.finaltimer > 0) 
-		return TimeSpan.FromMilliseconds(current.gametimer);
+	if (!settings["IL_enable"])
+		if (current.missiontimer < 2500 || current.finaltimer > 0) 
+			return TimeSpan.FromMilliseconds(current.gametimer);
 }
+
