@@ -4,5 +4,8 @@ Features:
 - Load time removal (loads, menu and game exit time)
 - IGT support (timer equals to game timer after every mission end).
 
+Settings:
+- IL speedrun: disables 'game time' update on mission start, so timer doesnt display full IGT when you begin any mission 
+
 Known issues:
 - ~~Game seems to be significantly slower in performance than the LiveSplit script execution. Sometimes race condition occurs. Maybe i'll find a solution later, temporary workaround built in for now (should work most of the time).~~ Fixed
