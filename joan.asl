@@ -9,13 +9,26 @@ state("JOAN", "Steam")
 {
 
 	// Module size: 6905856
-	// Hash: 7A773B26CD67C37796DCF8057E5F654E
+	// Hash: 7A773B26CD67C37796DCF8057E5F654E (steam before 10.2026)
+	// Hash: EFC3A1D35DA87C187F14947CB63244A6 (steam "original" branch) 
+	// Hash: E292807B25DCF624C0274E375D4B6CFB (steam updated version)
 
 	int finaltimer :	0x657EC5;
 	int missiontimer :	0x659181;
 	int gametimer :		0x6596D0;
 	ushort combo : 		0x65BA62;
 	
+}
+
+state("openjoan", "OpenJoan")
+{
+	// Module Size: 13471744
+	// Hash: 9EEDF0ECD7DB7350C657EF840BF718F0 
+
+	int finaltimer :	0xAD41D9;
+	int missiontimer :	0xAD5561;
+	int gametimer :		0xAD5C04;
+	ushort combo : 		0xC3EDA8;
 }
 
 state("JOAN", "Akella")
